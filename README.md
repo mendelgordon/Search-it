@@ -1,6 +1,6 @@
 # Search-it
 
-Search-it is a reddit client for searching and viewing reddit posts. It is a web application that uses the reddit API to fetch posts and comments. It is built using React and Redux.
+Search-it is a reddit client for searching and viewing reddit posts. It is a web application that uses the reddit API to fetch posts and comments. It is built using React, react-router-dom, and Redux.
 
 Desktop Wireframe: [https://wireframe.cc/MnwPlP](https://wireframe.cc/MnwPlP)
 
