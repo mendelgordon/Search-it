@@ -1,6 +1,6 @@
-# Search-it
+# Reddit-Lite
 
-Search-it is a reddit client for searching and viewing reddit posts. It is a web application that uses the reddit API to fetch posts and comments. It is built using React, react-router-dom, and Redux.
+Reddit-Lite is a basic reddit client for viewing posts. It is a web application that uses the reddit API to fetch posts and comments. It is built using React, react-router-dom~~, and Redux~~.
 
 Desktop Wireframe: [https://wireframe.cc/MnwPlP](https://wireframe.cc/MnwPlP)
 
