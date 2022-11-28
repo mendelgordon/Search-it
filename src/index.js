@@ -1,14 +1,41 @@
 import React from "react";
 import { createRoot } from "react-dom/client";
-import App from "./App";
+import { App } from "./App";
 import reportWebVitals from "./reportWebVitals";
+import { createBrowserRouter, RouterProvider } from "react-router-dom";
+import { ErrorPage } from "./error-page";
+import { SearchPosts } from "./SearchPosts";
+import { SearchSubreddits } from "./SearchSubreddits";
+import { DisplaySubreddit } from "./DisplaySubreddit";
+
+const router = createBrowserRouter([
+	{
+		path: "/",
+		element: <App />,
+		errorElement: <ErrorPage />,
+		children: [
+			{
+				path: "/searchposts",
+				element: <SearchPosts />,
+			},
+			{
+				path: "/searchsubreddits",
+				element: <SearchSubreddits />,
+			},
+			{
+				path: "/r/:subreddit",
+				element: <DisplaySubreddit />,
+			},
+		],
+	},
+]);
 
 const container = document.getElementById("root");
 const root = createRoot(container);
 
 root.render(
 	<React.StrictMode>
-		<App />
+			<RouterProvider router={router} />
 	</React.StrictMode>
 );
 
