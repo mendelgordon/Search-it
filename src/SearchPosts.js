@@ -6,7 +6,7 @@ export function SearchPosts() {
 	const [search, setSearch] = useState("");
 	const [searchResults, setSearchResults] = useState([]);
 	const [showAll, setShowAll] = useState(false);
-	const queryParams = showAll ? "&nsfw=1&include_over_18=on" : "";
+	const queryParams = showAll ? "&include_over_18=on" : "";
 
 	const handleQueryParams = () => {
 		setShowAll(!showAll);
@@ -17,7 +17,7 @@ export function SearchPosts() {
 	};
 
 	useEffect(() => {
-		fetch(`https://www.reddit.com/search.json?q=${search}${queryParams}`)
+		fetch(`https://www.reddit.com/search.json?q=${search}${queryParams}&raw_json=1`)
 			.then((response) => response.json())
 			.then((json) => setSearchResults(json));
 	}, [search, queryParams]);
@@ -30,19 +30,18 @@ export function SearchPosts() {
 		const titles = [];
 		const images = [];
 		const urls = [];
-		const domain = "https://www.reddit.com";
 		const data = searchResults.data.children;
 
 		for (let i = 0; i < data.length; i++) {
 			titles[i] = data[i].data.title;
 
 			if (data[i].data.preview) {
-				images[i] = data[i].data.preview.images[0].source.url.replace(/&amp;/g, "&");
+				images[i] = data[i].data.preview.images[0].source.url;
 			} else {
 				images[i] = "https://www.redditstatic.com/icon.png";
 			}
 
-			urls[i] = domain + data[i].data.permalink;
+			urls[i] = data[i].data.permalink;
 		}
 
 		return titles.map((title, index) => {
@@ -67,19 +66,19 @@ export function SearchPosts() {
 	return (
 		<div className="App">
 			<header className="App-header">
-				<input type="text" placeholder="Search" value={search} onChange={handleSearch} />
+				<form action="GET">
+					<input type="text" placeholder="Search" value={search} onChange={handleSearch} />
+					<label htmlFor="showAll" className="showAll">
+						Show all
+					</label>
+					<input type="checkbox" id="showAll" name="showAll" value={showAll} onChange={handleQueryParams} />
+				</form>
 			</header>
 			<main>
 				<Masonry breakpointCols={breakpointColumnsObj} className="my-masonry-grid" columnClassName="my-masonry-grid_column">
-					{displayResults(searchResults) || <div>No results</div>}
+					{displayResults(searchResults)}
 				</Masonry>
 			</main>
-			<div>
-				<label htmlFor="showAll" className="showAll">
-					Show all
-				</label>
-				<input type="checkbox" id="showAll" name="showAll" value={showAll} onChange={handleQueryParams} />
-			</div>
 		</div>
 	);
 }

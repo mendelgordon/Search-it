@@ -1,10 +1,12 @@
+
+
 body {
 	text-align: center;
+	font-family: verdana, arial, helvetica, sans-serif;
 }
 
 header form {
 	display: flex;
-	justify-content: space-between;
 	align-items: center;
 }
 
@@ -13,6 +15,10 @@ header input {
 	margin: 10px;
 	border-radius: 10px;
 	border-style: solid;
+}
+
+.text {
+	font-size: 14px;
 }
 
 .my-masonry-grid {
@@ -44,7 +50,7 @@ header input {
 	border-radius: 10px;
 }
 
-.my-masonry-grid img[src="https://www.redditstatic.com/icon.png"] {
+.my-masonry-grid img[src=""] {
 	display: none;
 }
 

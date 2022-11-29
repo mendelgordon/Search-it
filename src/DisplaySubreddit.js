@@ -8,7 +8,7 @@ export function DisplaySubreddit() {
 	const [posts, setPosts] = useState([]);
 
 	useEffect(() => {
-		fetch(`https://www.reddit.com/r/${subreddit}.json`)
+		fetch(`https://www.reddit.com/r/${subreddit}.json?raw_json=1`)
 			.then((response) => response.json())
 			.then((json) => setPosts(json));
 	}, [subreddit]);
@@ -19,21 +19,16 @@ export function DisplaySubreddit() {
 		}
 
 		const titles = [];
+		const texts = [];
 		const images = [];
 		const urls = [];
-		const domain = "https://www.reddit.com";
 		const data = posts.data.children;
 
 		for (let i = 0; i < data.length; i++) {
 			titles[i] = data[i].data.title;
-
-			if (data[i].data.preview) {
-				images[i] = data[i].data.preview.images[0].source.url.replace(/&amp;/g, "&");
-			} else {
-				images[i] = "https://www.redditstatic.com/icon.png";
-			}
-
-			urls[i] = domain + data[i].data.permalink;
+			texts[i] = data[i].data.selftext;
+			images[i] = data[i].data.preview ? data[i].data.preview.images[0].source.url : "";
+			urls[i] = data[i].data.permalink;
 		}
 
 		return titles.map((title, index) => {
@@ -41,7 +36,8 @@ export function DisplaySubreddit() {
 				<div key={index}>
 					<a href={urls[index]} target="_blank" rel="noreferrer">
 						<img src={images[index]} alt={title} loading="lazy" />
-						{title}
+						<p>{title}</p>
+						<p className="text">{texts[index]}</p>
 					</a>
 				</div>
 			);
@@ -57,7 +53,7 @@ export function DisplaySubreddit() {
 
 	return (
 		<div className="App">
-			<header className="App-header">{subreddit}</header>
+			<header className="App-header"><i>r/{subreddit}</i></header>
 			<main>
 				<Masonry breakpointCols={breakpointColumnsObj} className="my-masonry-grid" columnClassName="my-masonry-grid_column">
 					{displayPosts(posts) || <div>Loading...</div>}

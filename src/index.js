@@ -7,6 +7,7 @@ import { ErrorPage } from "./error-page";
 import { SearchPosts } from "./SearchPosts";
 import { SearchSubreddits } from "./SearchSubreddits";
 import { DisplaySubreddit } from "./DisplaySubreddit";
+import { DisplayPost } from "./DisplayPost";
 
 const router = createBrowserRouter([
 	{
@@ -26,6 +27,10 @@ const router = createBrowserRouter([
 				path: "/r/:subreddit",
 				element: <DisplaySubreddit />,
 			},
+			{
+				path: "/r/:subreddit/comments/:id",
+				element: <DisplayPost />,
+			},
 		],
 	},
 ]);
@@ -35,7 +40,7 @@ const root = createRoot(container);
 
 root.render(
 	<React.StrictMode>
-			<RouterProvider router={router} />
+		<RouterProvider router={router} />
 	</React.StrictMode>
 );
 
