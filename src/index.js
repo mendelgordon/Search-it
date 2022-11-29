@@ -28,7 +28,7 @@ const router = createBrowserRouter([
 				element: <DisplaySubreddit />,
 			},
 			{
-				path: "/r/:subreddit/comments/:id",
+				path: "/r/:subreddit/comments/:id/:title",
 				element: <DisplayPost />,
 			},
 		],
