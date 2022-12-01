@@ -34,7 +34,7 @@ export function DisplaySubreddit() {
 		return titles.map((title, index) => {
 			return (
 				<div key={index}>
-					<a href={urls[index]} target="_blank" rel="noreferrer">
+					<a href={urls[index]}>
 						<img src={images[index]} alt={title} loading="lazy" />
 						<p>{title}</p>
 						<p className="text">{texts[index]}</p>
