@@ -1,9 +1,12 @@
 import "./SearchPosts.css";
 import { useState, useEffect } from "react";
 import Masonry from "react-masonry-css";
+import	{ Form, useSearchParams } from "react-router-dom";
 
 export function SearchSubreddits() {
-	const [search, setSearch] = useState("");
+	const [searchParams] = useSearchParams();
+	const query = searchParams.get("q") ||	"";
+	const [search, setSearch] = useState(query);
 	const [searchResults, setSearchResults] = useState([]);
 	const [showAll, setShowAll] = useState(false);
 	const queryParams = showAll ? "&include_over_18=on" : "";
@@ -63,13 +66,13 @@ export function SearchSubreddits() {
 	return (
 		<div className="App">
 			<header className="App-header">
-				<form action="GET">
-					<input type="text" placeholder="Search" value={search} onChange={handleSearch} />
+			<Form action="/searchsubreddits" method="get">
+					<input type="text" name="q" placeholder="Search" value={search} onChange={handleSearch} />
 					<label htmlFor="showAll" className="showAll">
 						Show all
 					</label>
 					<input type="checkbox" id="showAll" name="showAll" value={showAll} onChange={handleQueryParams} />
-				</form>
+				</Form>
 			</header>
 			<main>
 				<Masonry breakpointCols={breakpointColumnsObj} className="my-masonry-grid" columnClassName="my-masonry-grid_column">
