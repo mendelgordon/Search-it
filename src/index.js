@@ -20,6 +20,10 @@ const router = createBrowserRouter([
 				element: <SearchPosts />,
 			},
 			{
+				path: "/searchposts/:searchterm",
+				element: <SearchPosts />,
+			},
+			{
 				path: "/searchsubreddits",
 				element: <SearchSubreddits />,
 			},
