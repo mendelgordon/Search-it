@@ -8,7 +8,6 @@ Next I plan on:
 
 1. adding threading to the comments so you can see what's being replied to.
 2. adding a loading spinner.
-3. making the homepage of the app show r/popular posts.
 4. displaying the image of the post on the post page.
 5. adding videos to the searchposts and displaypost pages.
 6. adding marked-react to the comments so you can see markdown.

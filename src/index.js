@@ -16,6 +16,10 @@ const router = createBrowserRouter([
 		errorElement: <ErrorPage />,
 		children: [
 			{
+				path: "/",
+				element: <DisplaySubreddit />,
+			},
+			{
 				path: "/searchposts",
 				element: <SearchPosts />,
 			},

@@ -8,7 +8,7 @@ export function DisplaySubreddit() {
 	const [posts, setPosts] = useState([]);
 
 	useEffect(() => {
-		fetch(`https://www.reddit.com/r/${subreddit}.json?raw_json=1`)
+		fetch(`https://www.reddit.com/r/${subreddit || 'popular'}.json?raw_json=1`)
 			.then((response) => response.json())
 			.then((json) => setPosts(json));
 	}, [subreddit]);
@@ -53,7 +53,7 @@ export function DisplaySubreddit() {
 
 	return (
 		<div className="App">
-			<header className="App-header"><i>r/{subreddit}</i></header>
+			<header className="App-header"><i>r/{subreddit || 'popular'}</i></header>
 			<main>
 				<Masonry breakpointCols={breakpointColumnsObj} className="my-masonry-grid" columnClassName="my-masonry-grid_column">
 					{displayPosts(posts) || <div>Loading...</div>}
