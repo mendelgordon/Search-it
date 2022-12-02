@@ -23,14 +23,14 @@ export function SearchSubreddits() {
 	};
 
 	useEffect(() => {
-		fetch(`https://www.reddit.com/subreddits/search.json?q=${search}${queryParams}&raw_json=1`)
-			.then((response) => response.json())
-			.then((json) => setSearchResults(json));
 		gtag("event", "search", {
 			event_category: "search",
 			event_label: "search",
 			value: search,
 		});
+		fetch(`https://www.reddit.com/subreddits/search.json?q=${search}${queryParams}&raw_json=1`)
+			.then((response) => response.json())
+			.then((json) => setSearchResults(json));
 	}, [search, queryParams]);
 
 	const displayResults = (searchResults) => {
