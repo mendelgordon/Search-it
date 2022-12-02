@@ -6,12 +6,12 @@ Original Desktop Wireframe: [https://wireframe.cc/MnwPlP](https://wireframe.cc/M
 
 Next I plan on:
 
-1. adding threading to the comments so you can see what's being replied to.
-2. adding a loading spinner.
-4. displaying the image of the post on the post page.
-5. adding videos to the searchposts and displaypost pages.
-6. adding marked-react to the comments so you can see markdown.
-7. managing some of the state with rtk. (not sure if I actually need to do this)
+ adding threading to the comments so you can see what's being replied to.
+ adding a loading spinner.
+ displaying the image of the post on the post page.
+ adding videos to the searchposts and displaypost pages.
+ adding marked-react to the comments so you can see markdown.
+ managing some of the state with rtk. (not sure if I actually need to do this)
 
 ## Setup
 
