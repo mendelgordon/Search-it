@@ -1,11 +1,14 @@
 import "./SearchPosts.css";
 import { useState, useEffect } from "react";
 import Masonry from "react-masonry-css";
-import	{ Form, useSearchParams } from "react-router-dom";
+import { Form, useSearchParams } from "react-router-dom";
+import { gtag, install } from "ga-gtag";
+
+install("G-XYL8BTY99J");
 
 export function SearchSubreddits() {
 	const [searchParams] = useSearchParams();
-	const query = searchParams.get("q") ||	"";
+	const query = searchParams.get("q") || "";
 	const [search, setSearch] = useState(query);
 	const [searchResults, setSearchResults] = useState([]);
 	const [showAll, setShowAll] = useState(false);
@@ -23,6 +26,11 @@ export function SearchSubreddits() {
 		fetch(`https://www.reddit.com/subreddits/search.json?q=${search}${queryParams}&raw_json=1`)
 			.then((response) => response.json())
 			.then((json) => setSearchResults(json));
+		gtag("event", "search", {
+			event_category: "search",
+			event_label: "search",
+			value: search,
+		});
 	}, [search, queryParams]);
 
 	const displayResults = (searchResults) => {
@@ -66,7 +74,7 @@ export function SearchSubreddits() {
 	return (
 		<div className="App">
 			<header className="App-header">
-			<Form action="/searchsubreddits" method="get">
+				<Form action="/searchsubreddits" method="get">
 					<input type="text" name="q" placeholder="Search" value={search} onChange={handleSearch} />
 					<label htmlFor="showAll" className="showAll">
 						Show all

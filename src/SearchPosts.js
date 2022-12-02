@@ -2,6 +2,9 @@ import "./SearchPosts.css";
 import { useState, useEffect } from "react";
 import Masonry from "react-masonry-css";
 import { Form, useSearchParams } from "react-router-dom";
+import { gtag, install } from 'ga-gtag';
+
+install('G-XYL8BTY99J');
 
 export function SearchPosts() {
 	const [searchParams] = useSearchParams();
@@ -23,6 +26,11 @@ export function SearchPosts() {
 		fetch(`https://www.reddit.com/search.json?q=${search}${queryParams}&raw_json=1`)
 			.then((response) => response.json())
 			.then((json) => setSearchResults(json));
+			gtag('event', 'search', {
+				'event_category': 'search',
+				'event_label': 'search',
+				'value': search
+			});
 	}, [search, queryParams]);
 
 	const displayResults = (searchResults) => {
