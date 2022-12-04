@@ -8,7 +8,6 @@ Next I plan on:
 
  adding a loading spinner.
  adding videos to the searchposts and displaypost pages.
- adding marked-react to the comments so you can see markdown.
  managing some of the state with rtk. (not sure if I actually need to do this)
 
 ## Setup
