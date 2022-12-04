@@ -43,13 +43,11 @@ export function DisplayPost() {
 		};
 
 		return flattenComments(commentsJson).map((comment, index) => {
+			if (!comment.body) {
+				return null;
+			}
 			return (
-				<div
-					key={index}
-					style={{
-						marginLeft: `${comment.depth * 10}px`,
-					}}
-				>
+				<div key={index} depth={comment.depth}>
 					{comment.body && <p className="text">{comment.body}</p>}
 					{comment.created && comment.author && (
 						<p className="date">

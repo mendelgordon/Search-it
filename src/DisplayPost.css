@@ -11,8 +11,13 @@ main {
 	margin: 1em auto 0;
 }
 
-p {
-	margin: 0.5em;
+p.text {
+	margin-top: 10px;
+	margin-bottom: 5px;
+}
+
+.text {
+	font-size: 16px;
 }
 
 img {
@@ -22,4 +27,64 @@ img {
 header a {
 	text-decoration: none;
 	color: initial;
+}
+
+/* use different kinds of bullet points to show which comment is to which other comment */
+
+div[depth] {
+	display: list-item;
+}
+
+div[depth="0"] {
+	margin-left: 0;
+}
+
+div[depth="1"] {
+	margin-left: 1em;
+	list-style-type: square;
+}
+
+div[depth="2"] {
+	margin-left: 2em;
+	list-style-type: circle;
+}
+
+div[depth="3"] {
+	margin-left: 3em;
+	list-style-type: disc;
+}
+
+div[depth="4"] {
+	margin-left: 4em;
+	list-style-type: square;
+}
+
+div[depth="5"] {
+	margin-left: 5em;
+	list-style-type: circle;
+}
+
+div[depth="6"] {
+	margin-left: 6em;
+	list-style-type: disc;
+}
+
+div[depth="7"] {
+	margin-left: 7em;
+	list-style-type: square;
+}
+
+div[depth="8"] {
+	margin-left: 8em;
+	list-style-type: circle;
+}
+
+div[depth="9"] {
+	margin-left: 9em;
+	list-style-type: disc;
+}
+
+div[depth="10"] {
+	margin-left: 10em;
+	list-style-type: square;
 }
