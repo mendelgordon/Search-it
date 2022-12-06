@@ -1,7 +1,16 @@
 import "./App.css";
 import { Outlet, Link } from "react-router-dom";
+import { useState } from "react";
 
 export function App() {
+	const [isLoading, setLoading] = useState(true);
+
+	const loaderElement = document.querySelector(".loader-container");
+	if (loaderElement) {
+		loaderElement.remove();
+		setLoading(!isLoading);
+	}
+
 	return (
 		<div className="App">
 			<nav>

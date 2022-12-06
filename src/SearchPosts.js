@@ -3,6 +3,7 @@ import { useState, useEffect } from "react";
 import Masonry from "react-masonry-css";
 import { Form, useSearchParams } from "react-router-dom";
 import { gtag, install } from 'ga-gtag';
+import { Loader	} from './features/loader';
 
 install('G-XYL8BTY99J');
 
@@ -58,7 +59,7 @@ export function SearchPosts() {
 		return titles.map((title, index) => {
 			return (
 				<div key={index}>
-					<a href={urls[index]} target="_blank" rel="noreferrer">
+					<a href={urls[index]}>
 						<img src={images[index]} alt={title} loading="lazy" />
 						{title}
 					</a>
@@ -87,7 +88,7 @@ export function SearchPosts() {
 			</header>
 			<main>
 				<Masonry breakpointCols={breakpointColumnsObj} className="my-masonry-grid" columnClassName="my-masonry-grid_column">
-					{displayResults(searchResults)}
+					{displayResults(searchResults) || <Loader />}
 				</Masonry>
 			</main>
 		</div>

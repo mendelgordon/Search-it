@@ -1,14 +1,14 @@
 # Reddit
 
-This lets you search reddit posts and subreddits, and view posts and subreddits. It uses the reddit JSON API to fetch the posts. It is built using React, React Router, and react-masonry-css.
+This lets you search reddit posts and subreddits, and view posts and subreddits. It uses the reddit JSON API to fetch the posts. It is built using React, React Router, and react-masonry-css, interweave.
 
 Original Desktop Wireframe: [https://wireframe.cc/MnwPlP](https://wireframe.cc/MnwPlP) (didn't end up using this)
 
-Next I plan on:
+In the future I would like to:
 
- adding a loading spinner.
- adding videos to the searchposts and displaypost pages.
- managing some of the state with rtk. (not sure if I actually need to do this)
+ Add videos to the searchposts page.
+ Manage some of the state with rtk. (not sure if I actually need to do this)
+ Add tests.
 
 ## Setup
 

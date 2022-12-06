@@ -16,6 +16,10 @@ p.text {
 	margin-bottom: 5px;
 }
 
+p {
+	overflow-wrap: break-word;
+}
+
 .text {
 	font-size: 16px;
 }

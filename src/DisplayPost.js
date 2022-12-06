@@ -2,6 +2,8 @@ import "./DisplayPost.css";
 import { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import { convertTime } from "./features/time";
+import { Interweave } from "interweave";
+import { Loader } from "./features/loader";
 
 export function DisplayPost() {
 	const { subreddit, id } = useParams();
@@ -15,11 +17,29 @@ export function DisplayPost() {
 
 	const displayPost = (json) => {
 		const post = json[0].data.children[0].data;
+
+		const mainPost = () => {
+			if (post.post_hint === "image") {
+				return <img src={post.url} alt={post.title} />;
+			} else if (post.url.includes(".gifv")) {
+				return <video src={post.preview.reddit_video_preview.fallback_url} controls />;
+			} else if (post.post_hint === "hosted:video") {
+				return <video src={post.media.reddit_video.fallback_url} controls />;
+			} else if (post.post_hint === "rich:video") {
+				return <Interweave content={post.secure_media_embed.content} allowAttributes="true" allowElements="true" />;
+			} else if (post.post_hint === "link" || !post.url.includes("/r/")) {
+				return <a href={post.url}>{(post.thumbnail && post.thumbnail !== "default") || post.preview ? <img src={post.thumbnail || (post.preview && post.preview.images[0].resolutions[0].url)} alt="" /> : "Click here to view"}</a>;
+			} else if (post.post_hint === "video") {
+				return <video src={post.media.reddit_video.fallback_url} controls />;
+			} else {
+				return <p className="text">{post.selftext}</p>;
+			}
+		};
+
 		return (
 			<div>
-				{post.url && <img src={post.url} alt={post.title} loading="lazy" />}
 				{post.title && <p className="title">{post.title}</p>}
-				{post.selftext && <p className="text">{post.selftext}</p>}
+				{mainPost()}
 				{post.created && post.author && (
 					<p className="date">
 						Posted {convertTime(post.created)} by {post.author} - {post.ups - post.downs} Points
@@ -65,10 +85,10 @@ export function DisplayPost() {
 				<h2>
 					<a href={"/r/" + subreddit}>r/{subreddit}</a>
 				</h2>
-				{json && displayPost(json)}
+				{(json && displayPost(json)) || <Loader />}
 			</header>
 			<main>
-				<h3>Comments</h3>
+				{json && <h3>Comments</h3>}
 				{json && displayComments(json)}
 			</main>
 		</div>

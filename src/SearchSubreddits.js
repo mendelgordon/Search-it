@@ -3,6 +3,7 @@ import { useState, useEffect } from "react";
 import Masonry from "react-masonry-css";
 import { Form, useSearchParams } from "react-router-dom";
 import { gtag, install } from "ga-gtag";
+import { Loader } from "./features/loader";
 
 install("G-XYL8BTY99J");
 
@@ -84,7 +85,7 @@ export function SearchSubreddits() {
 			</header>
 			<main>
 				<Masonry breakpointCols={breakpointColumnsObj} className="my-masonry-grid" columnClassName="my-masonry-grid_column">
-					{displayResults(searchResults)}
+					{displayResults(searchResults) || <Loader />}
 				</Masonry>
 			</main>
 		</div>

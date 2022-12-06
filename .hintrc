@@ -1,0 +1,15 @@
+{
+  "extends": [
+    "development"
+  ],
+  "hints": {
+    "compat-api/css": [
+      "default",
+      {
+        "ignore": [
+          "overflow-wrap: anywhere" // this was already added to safari so it can be ignored
+        ]
+      }
+    ]
+  }
+}

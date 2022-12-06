@@ -21,6 +21,10 @@ header input {
 	font-size: 14px;
 }
 
+p {
+	overflow-wrap: anywhere;
+}
+
 .my-masonry-grid {
 	display: -webkit-box; /* Not needed if autoprefixing */
 	display: -ms-flexbox; /* Not needed if autoprefixing */
@@ -48,6 +52,15 @@ header input {
 .my-masonry-grid_column img {
 	width: 100%;
 	border-radius: 10px;
+}
+
+video {
+	max-width: 100%;
+}
+
+.my-masonry-grid img[src="https://www.redditstatic.com/icon.png"] {
+		width: 38px;
+		float: left;
 }
 
 .my-masonry-grid img[src=""] {
