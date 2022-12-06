@@ -20,9 +20,9 @@ To run this project locally:
 4. run `npm start` in the project directory
 
 Remaining requirements:
-Users are able to leave an error state
-Get 90+ scores on Lighthouse https://web.dev/measure/
+Users are able to leave an error state (1 point)
+Get 90+ scores on Lighthouse https://web.dev/measure/ (2 points)
 (We understand you cannot control how media assets like videos and images are sent to the client. It is okay to have a score below 90 for Performance if they are related to the media from Reddit.)
-OPTIONAL: Make your application a progressive web app
-Write unit tests for your components using Jest and Enzyme
-Write end-to-end tests for your application
+OPTIONAL: Make your application a progressive web app (3 points)
+Write unit tests for your components using Jest and Enzyme (4 points)
+Write end-to-end tests for your application (5 points)
