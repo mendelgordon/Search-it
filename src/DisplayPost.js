@@ -68,7 +68,7 @@ export function DisplayPost() {
 			}
 			return (
 				<div key={index} depth={comment.depth}>
-					{comment.body && <p className="text">{comment.body}</p>}
+					{comment.body && <p className="text"><Interweave content={comment.body} allowAttributes="true" allowElements="true" /></p>}
 					{comment.created && comment.author && (
 						<p className="date">
 							Posted {convertTime(comment.created)} by {comment.author} - {comment.ups - comment.downs} Points
