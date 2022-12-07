@@ -14,7 +14,3 @@ To run this project locally:
 2. clone the repo to your computer
 3. run `npm install` in the project directory
 4. run `npm start` in the project directory
-
-Remaining requirements:
-Write unit tests for your components using Jest and Enzyme (4 points)
-Write end-to-end tests for your application (5 points)
