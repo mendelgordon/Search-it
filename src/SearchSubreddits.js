@@ -25,9 +25,7 @@ export function SearchSubreddits() {
 
 	useEffect(() => {
 		gtag("event", "search", {
-			event_category: "search",
-			event_label: "search",
-			value: search,
+  search_term: search,
 		});
 		fetch(`https://www.reddit.com/subreddits/search.json?q=${search}${queryParams}&raw_json=1`)
 			.then((response) => response.json())
