@@ -2,10 +2,7 @@ import "./styles/SearchPosts.css";
 import { useState, useEffect } from "react";
 import Masonry from "react-masonry-css";
 import { Form, useSearchParams } from "react-router-dom";
-import { gtag, install } from "ga-gtag";
 import { Loader } from "./features/loader";
-
-install("G-XYL8BTY99J");
 
 export function SearchSubreddits() {
 	const [searchParams] = useSearchParams();
@@ -24,9 +21,6 @@ export function SearchSubreddits() {
 	};
 
 	useEffect(() => {
-		gtag("event", "search", {
-  search_term: search,
-		});
 		fetch(`https://www.reddit.com/subreddits/search.json?q=${search}${queryParams}&raw_json=1`)
 			.then((response) => response.json())
 			.then((json) => setSearchResults(json));
