@@ -1,14 +1,10 @@
 # Reddit
 
-This lets you search reddit posts and subreddits, and view posts and subreddits. It uses the reddit JSON API to fetch the posts. It is built using React, React Router, and react-masonry-css, interweave.
+This lets you search reddit posts and subreddits, and view posts and subreddits. It uses the reddit JSON API to fetch the posts. It is built using React, React Router, react-masonry-css, and Interweave.
 
 Original Desktop Wireframe: [https://wireframe.cc/MnwPlP](https://wireframe.cc/MnwPlP) (didn't end up using this)
 
-In the future I would like to:
-
- Add videos to the searchposts page.
- Manage some of the state with rtk. (not sure if I actually need to do this)
- Add tests.
+In the future I would like to add videos to the searchposts page.
 
 ## Setup
 
@@ -20,6 +16,5 @@ To run this project locally:
 4. run `npm start` in the project directory
 
 Remaining requirements:
-OPTIONAL: Make your application a progressive web app (3 points)
 Write unit tests for your components using Jest and Enzyme (4 points)
 Write end-to-end tests for your application (5 points)
