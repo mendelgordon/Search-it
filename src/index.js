@@ -1,9 +1,9 @@
 import React from "react";
 import { createRoot } from "react-dom/client";
 import { App } from "./App";
-import reportWebVitals from "./reportWebVitals";
+import reportWebVitals from "./tests/reportWebVitals";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
-import { ErrorPage } from "./error-page";
+import { ErrorPage } from "./features/error-page";
 import { SearchPosts } from "./SearchPosts";
 import { SearchSubreddits } from "./SearchSubreddits";
 import { DisplaySubreddit } from "./DisplaySubreddit";

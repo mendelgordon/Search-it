@@ -1,4 +1,4 @@
-import "./DisplayPost.css";
+import "./styles/DisplayPost.css";
 import { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import { convertTime } from "./features/time";

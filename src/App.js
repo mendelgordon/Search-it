@@ -1,4 +1,4 @@
-import "./App.css";
+import "./styles/App.css";
 import { Outlet, Link } from "react-router-dom";
 import { useState } from "react";
 

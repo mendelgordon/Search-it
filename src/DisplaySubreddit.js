@@ -1,4 +1,4 @@
-import "./SearchPosts.css";
+import "./styles/SearchPosts.css";
 import { useState, useEffect } from "react";
 import Masonry from "react-masonry-css";
 import { useParams } from "react-router-dom";
