@@ -4,7 +4,7 @@ This lets you search reddit posts and subreddits, and view posts and subreddits.
 
 Original Desktop Wireframe: [https://wireframe.cc/MnwPlP](https://wireframe.cc/MnwPlP) (didn't end up using this)
 
-In the future I would like to add videos to the searchposts page.
+In the future I would like to add videos to the searchposts page, and use lower resolution images for the posts on the searchposts and searchsubreddits pages.
 
 ## Setup
 
