@@ -1,5 +1,7 @@
 # Reddit
 
+EDIT: This no longer lets you view subreddits due to changes in the reddit api 🤷‍♂️
+
 This lets you search reddit posts and subreddits, and view posts and subreddits. It uses the reddit JSON API to fetch the posts. It is built using React, React Router, react-masonry-css, and Interweave.
 
 Original Desktop Wireframe: [https://wireframe.cc/MnwPlP](https://wireframe.cc/MnwPlP) (didn't end up using this)

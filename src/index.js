@@ -5,7 +5,6 @@ import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import { ErrorPage } from "./features/error-page";
 import { SearchPosts } from "./SearchPosts";
 import { SearchSubreddits } from "./SearchSubreddits";
-import { DisplaySubreddit } from "./DisplaySubreddit";
 import { DisplayPost } from "./DisplayPost";
 
 const router = createBrowserRouter([
@@ -16,7 +15,7 @@ const router = createBrowserRouter([
 		children: [
 			{
 				path: "/",
-				element: <DisplaySubreddit />,
+				element: <SearchPosts />,
 			},
 			{
 				path: "/searchposts",
@@ -25,10 +24,6 @@ const router = createBrowserRouter([
 			{
 				path: "/searchsubreddits",
 				element: <SearchSubreddits />,
-			},
-			{
-				path: "/r/:subreddit",
-				element: <DisplaySubreddit />,
 			},
 			{
 				path: "/r/:subreddit/comments/:id/:title",
