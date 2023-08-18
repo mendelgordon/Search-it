@@ -6,3 +6,25 @@ nav ul {
 nav li {
 	list-style: none;
 }
+
+html:has(.dark-mode) {
+	background-color: black;
+	color: white;
+	& a {
+		color: white;
+	}
+	.my-masonry-grid_column > div {
+		background-color: black;
+		box-shadow: #4e5a83 5px 5px 0px 0px;
+		border-color: #6c7eb2;
+	}
+}
+
+nav button {
+	background: none;
+	border-radius: 30px;
+	position: fixed;
+	right: 10px;
+	bottom: 10px;
+	font-size: 40px;
+}
