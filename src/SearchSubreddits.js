@@ -6,7 +6,7 @@ import { Loader } from "./features/loader";
 
 export function SearchSubreddits() {
 	const [searchParams] = useSearchParams();
-	const query = searchParams.get("q") || "";
+	const query = searchParams.get("q") || "funny";
 	const [search, setSearch] = useState(query);
 	const [searchResults, setSearchResults] = useState([]);
 	const [showAll, setShowAll] = useState(false);
@@ -47,7 +47,7 @@ export function SearchSubreddits() {
 		return subreddits.map((subreddit, index) => {
 			return (
 				<div key={index}>
-					<a href={urls[index]}>
+					<a href={'https://old.reddit.com' + urls[index]}>
 						<b>{subreddit}</b>
 						<p>{descriptions[index]}</p>
 						<p>{subscribers[index]} subscribers</p>
