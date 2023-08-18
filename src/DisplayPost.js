@@ -83,7 +83,7 @@ export function DisplayPost() {
 		<div className="display-post">
 			<header>
 				<h2>
-					<a href={"/r/" + subreddit}>r/{subreddit}</a>
+					<a href={"https://old.reddit.com/r/" + subreddit}>r/{subreddit}</a>
 				</h2>
 				{(json && displayPost(json)) || <Loader />}
 			</header>

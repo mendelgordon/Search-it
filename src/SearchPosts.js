@@ -6,7 +6,7 @@ import { Loader	} from './features/loader';
 
 export function SearchPosts() {
 	const [searchParams] = useSearchParams();
-	const query = searchParams.get("q") ||	"";
+	const query = searchParams.get("q") ||	"btd5";
 	const [search, setSearch] = useState(query);
 	const [searchResults, setSearchResults] = useState([]);
 	const [showAll, setShowAll] = useState(false);

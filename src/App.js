@@ -16,10 +16,7 @@ export function App() {
 			<nav>
 				<ul>
 					<li>
-						<Link to={"/"}>Home</Link>
-					</li>
-					<li>
-						<Link to={"/searchposts"}>Search Posts</Link>
+						<Link to={"/"}>Search Posts</Link>
 					</li>
 					<li>
 						<Link to={"/searchsubreddits"}>Search Subreddits</Link>
